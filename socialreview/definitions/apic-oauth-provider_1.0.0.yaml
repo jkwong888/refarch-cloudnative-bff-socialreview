@@ -196,19 +196,19 @@ paths:
           description: >-
             Application client ID, can be provided in formData or using HTTP
             Basic Authentication
-          required: false
+          required: true
           type: string
         - name: client_secret
           in: formData
           description: >-
             Application secret, must be provided in formData or using HTTP Basic
             Authentication
-          required: false
+          required: true
           type: string
         - name: code
           in: formData
           description: Authorization code provided by the /oauth2/authorize endpoint
-          required: false
+          required: true
           type: string
         - name: redirect_uri
           in: formData
@@ -216,7 +216,7 @@ paths:
             required only if the redirect_uri parameter was included in the
             authorization request /oauth2/authorize; their values MUST be
             identical.
-          required: false
+          required: true
           type: string
         - name: username
           in: formData
@@ -232,7 +232,7 @@ paths:
           in: formData
           type: string
           description: Scope being requested
-          required: false
+          required: true
         - name: refresh_token
           in: formData
           type: string
@@ -292,6 +292,8 @@ definitions:
       - token_type
       - access_token
       - expires_in
+      - refresh_token
+      - scope
     properties:
       token_type:
         enum:
