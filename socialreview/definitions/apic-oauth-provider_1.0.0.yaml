@@ -264,7 +264,6 @@ x-ibm-configuration:
     scopes:
       review: Allow Mobile app to access user's social review resource
     grants:
-      - implicit
       - accessCode
     identity-extraction:
       type: custom-form
