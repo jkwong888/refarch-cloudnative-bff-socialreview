@@ -191,14 +191,14 @@ paths:
             - client_credentials
             - refresh_token
         - name: client_id
-          in: query
+          in: formData
           description: >-
             Application client ID, can be provided in formData or using HTTP
             Basic Authentication
           required: true
           type: string
         - name: client_secret
-          in: query
+          in: formData
           description: >-
             Application secret, must be provided in formData or using HTTP Basic
             Authentication
