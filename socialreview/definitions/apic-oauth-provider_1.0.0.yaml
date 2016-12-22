@@ -116,6 +116,7 @@ paths:
     post:
       consumes:
         - application/x-www-form-urlencoded
+        - multipart/form-data
       produces:
         - application/json
       summary: Request Access Tokens
