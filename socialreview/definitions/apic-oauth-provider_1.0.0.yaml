@@ -182,7 +182,7 @@ paths:
         The implicit grant requests, see /oauth2/authorize.
       parameters:
         - name: grant_type
-          in: header
+          in: formData
           description: Type of grant
           type: string
           required: true
@@ -192,7 +192,7 @@ paths:
             - client_credentials
             - refresh_token
         - name: client_id
-          in: header
+          in: formData
           description: >-
             Application client ID, can be provided in formData or using HTTP
             Basic Authentication
@@ -206,12 +206,12 @@ paths:
           required: false
           type: string
         - name: code
-          in: header
+          in: formData
           description: Authorization code provided by the /oauth2/authorize endpoint
           required: true
           type: string
         - name: redirect_uri
-          in: header
+          in: formData
           description: >-
             required only if the redirect_uri parameter was included in the
             authorization request /oauth2/authorize; their values MUST be
@@ -267,6 +267,7 @@ x-ibm-configuration:
     grants:
       - accessCode
       - implicit
+      - application
     identity-extraction:
       type: custom-form
       custom-form:
