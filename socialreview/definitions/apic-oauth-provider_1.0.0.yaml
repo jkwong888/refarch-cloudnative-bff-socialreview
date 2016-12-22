@@ -271,15 +271,15 @@ x-ibm-configuration:
     identity-extraction:
       type: custom-form
       custom-form:
-        url: 'http://case-authenticate-app.mybluemix.net/login.html'
+        url: 'http://jkwong-authenticate-app.mybluemix.net/login.html'
     authentication:
       x-ibm-authentication-url:
-        url: 'http://case-authenticate-app.mybluemix.net/authenticate'
+        url: 'http://jkwong-authenticate-app.mybluemix.net/authenticate'
         tls-profile: ''
     authorization:
       type: custom-form
       custom-form:
-        url: 'http://case-authenticate-app.mybluemix.net/grant.html'
+        url: 'http://jkwong-authenticate-app.mybluemix.net/grant.html'
     refresh-token:
       count: 2048
       ttl: 2682000
