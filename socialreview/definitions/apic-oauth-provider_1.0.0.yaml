@@ -247,8 +247,7 @@ paths:
             $ref: '#/definitions/access_token_response'
         '400':
           description: json document that may contain additional details about the failure
-      security:
-        - clientID: []
+      security: []
 securityDefinitions:
   clientID:
     description: ''
