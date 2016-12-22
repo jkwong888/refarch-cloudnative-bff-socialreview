@@ -181,7 +181,7 @@ paths:
         The implicit grant requests, see /oauth2/authorize.
       parameters:
         - name: grant_type
-          in: query
+          in: formData
           description: Type of grant
           type: string
           required: true
@@ -205,12 +205,12 @@ paths:
           required: true
           type: string
         - name: code
-          in: query
+          in: formData
           description: Authorization code provided by the /oauth2/authorize endpoint
           required: true
           type: string
         - name: redirect_uri
-          in: query
+          in: formData
           description: >-
             required only if the redirect_uri parameter was included in the
             authorization request /oauth2/authorize; their values MUST be
