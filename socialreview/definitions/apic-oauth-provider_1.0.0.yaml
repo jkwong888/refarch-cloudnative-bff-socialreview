@@ -182,7 +182,7 @@ paths:
         The implicit grant requests, see /oauth2/authorize.
       parameters:
         - name: grant_type
-          in: formData
+          in: header
           description: Type of grant
           type: string
           required: true
@@ -192,7 +192,7 @@ paths:
             - client_credentials
             - refresh_token
         - name: client_id
-          in: formData
+          in: header
           description: >-
             Application client ID, can be provided in formData or using HTTP
             Basic Authentication
@@ -203,15 +203,15 @@ paths:
           description: >-
             Application secret, must be provided in formData or using HTTP Basic
             Authentication
-          required: true
+          required: false
           type: string
         - name: code
-          in: formData
+          in: header
           description: Authorization code provided by the /oauth2/authorize endpoint
           required: true
           type: string
         - name: redirect_uri
-          in: formData
+          in: header
           description: >-
             required only if the redirect_uri parameter was included in the
             authorization request /oauth2/authorize; their values MUST be
