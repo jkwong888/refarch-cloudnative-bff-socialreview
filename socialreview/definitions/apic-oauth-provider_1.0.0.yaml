@@ -269,15 +269,16 @@ x-ibm-configuration:
       - implicit
       - application
     identity-extraction:
-      type: custom-form
+      type: redirect
       custom-form:
         url: 'http://jkwong-authenticate-app.mybluemix.net/login.html'
+      redirect-url: 'http://jkwong-authenticate-app.mybluemix.net/authenticate'
     authentication:
       x-ibm-authentication-url:
         url: 'http://jkwong-authenticate-app.mybluemix.net/authenticate'
         tls-profile: ''
     authorization:
-      type: custom-form
+      type: authenticated
       custom-form:
         url: 'http://jkwong-authenticate-app.mybluemix.net/grant.html'
     refresh-token:
