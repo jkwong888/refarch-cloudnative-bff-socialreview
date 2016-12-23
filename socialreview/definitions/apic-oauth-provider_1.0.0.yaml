@@ -268,7 +268,7 @@ x-ibm-configuration:
       - accessCode
       - implicit
     identity-extraction:
-      type: custom-form
+      type: redirect
       custom-form:
         url: 'https://jkwong-authenticate-app.mybluemix.net/'
       redirect-url: 'https://jkwong-authenticate-app.mybluemix.net/authenticate'
