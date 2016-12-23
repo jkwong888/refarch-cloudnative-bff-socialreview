@@ -274,7 +274,7 @@ x-ibm-configuration:
       redirect-url: 'https://jkwong-authenticate-app.mybluemix.net/authenticate'
     authentication:
       x-ibm-authentication-url:
-        url: 'https://jkwong-authenticate-app.mybluemix.net/authenticate'
+        url: 'https://jkwong-authenticate-app.mybluemix.net/validate'
         tls-profile: ''
     authorization:
       type: authenticated
