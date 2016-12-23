@@ -248,12 +248,45 @@ paths:
         '400':
           description: json document that may contain additional details about the failure
       security: []
+  /introspect:
+    post:
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      summary: Introspect a given access_token supported
+      description: |
+        This endpoint introspects a given access_token
+      security:
+        - clientIdHeader: []
+      parameters:
+        - name: token
+          in: formData
+          description: String value of the access_token to be introspected
+          required: true
+          type: string
+        - name: token_type_hint
+          in: formData
+          description: This must contain 'access_token' to indicate the token type
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 'json document containing issued information, etc.'
+          schema:
+            $ref: '#/definitions/introspect_response'
+        '401':
+          description: failure
 securityDefinitions:
   clientID:
     description: ''
     in: query
     name: client_id
     type: apiKey
+  clientIdHeader:
+    in: header
+    type: apiKey
+    name: X-IBM-Client-Id
 security:
   - {}
 x-ibm-configuration:
@@ -308,4 +341,44 @@ definitions:
       scope:
         type: string
       refresh_token:
+        type: string
+  introspect_response:
+    type: object
+    additionalProperties: false
+    required:
+      - active
+      - client_id
+      - client_name
+      - username
+      - sub
+      - exp
+      - expstr
+      - iat
+      - nbf
+      - nbfstr
+      - scope
+    properties:
+      active:
+        type: boolean
+      client_id:
+        type: string
+      client_name:
+        type: string
+      username:
+        type: string
+      sub:
+        type: string
+      exp:
+        type: string
+      expstr:
+        type: string
+      iat:
+        type: string
+      nbf:
+        type: string
+      nbfstr:
+        type: string
+      scope:
+        type: string
+      miscinfo:
         type: string
